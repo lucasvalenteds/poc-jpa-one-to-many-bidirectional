@@ -1,14 +1,18 @@
 package com.example.person;
 
+import com.example.document.Document;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Set;
 
 @Entity
 @Table(name = "PERSON")
@@ -24,4 +28,7 @@ public class Person {
 
     @Column(name = "PERSON_NAME")
     private String name;
+
+    @OneToMany(mappedBy = "person")
+    private Set<Document> documents;
 }
