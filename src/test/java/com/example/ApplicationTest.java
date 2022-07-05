@@ -97,7 +97,7 @@ class ApplicationTest {
 
         assertNotNull(personSaved.getId());
         assertEquals(person.getName(), personSaved.getName());
-        assertThat(person.getDocuments())
+        assertThat(personSaved.getDocuments())
                 .containsExactlyElementsOf(documents);
     }
 
